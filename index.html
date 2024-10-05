@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uranus - The Ice Giant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #003366;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz {
+            margin-top: 20px;
+            background-color: #e9f5ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Uranus - The Ice Giant</h1>
+        <img src="https://stsci-opo.org/STScI-01HHFNP2T05WKAX43B6BVYD1KR.png" alt="Uranus">
+        <p>Uranus is the seventh planet from the Sun and is known for its blue color and unique tilt.</p>
+        <p>This planet is classified as an ice giant, with a composition primarily of water, ammonia, and methane ice.</p>
+        <p>Uranus has a faint ring system and 27 known moons, each with unique characteristics.</p>
+        <p>It rotates on its side, making its axial tilt the largest of any planet in the Solar System.</p>
+        <p>Understanding Uranus helps astronomers learn about the formation and evolution of planetary systems.</p>
+
+        <div class="quiz">
+            <h2>Quiz Question</h2>
+            <p>What is Uranus primarily composed of?</p>
+            <form id="quizForm">
+                <input type="radio" id="option1" name="mcq" value="A">
+                <label for="option1">A) Hydrogen and Helium</label><br>
+                <input type="radio" id="option2" name="mcq" value="B">
+                <label for="option2">B) Rock and Metal</label><br>
+                <input type="radio" id="option3" name="mcq" value="C">
+                <label for="option3">C) Water, Ammonia, and Methane Ice</label><br>
+                <input type="radio" id="option4" name="mcq" value="D">
+                <label for="option4">D) Carbon Dioxide</label><br>
+                <button type="button" onclick="checkAnswer()">Submit</button>
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const options = document.getElementsByName('mcq');
+            let selectedOption;
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+            const resultDiv = document.getElementById('result');
+            if (selectedOption === 'C') {
+                resultDiv.textContent = "Correct! Uranus is primarily composed of water, ammonia, and methane ice.";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Incorrect. The correct answer is C) Water, Ammonia, and Methane Ice.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
